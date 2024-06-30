@@ -10,6 +10,7 @@
     > db_user=""
     > db_password=""
     > db_database="Insurance"
+    > db_port=3306
     > ```
     >
     `don't forget to fill the empty string with the correct values`
@@ -19,6 +20,8 @@
     > you can do this [here](https://docs.docker.com/get-docker/)
 3. fill the database with data you can do that with the files in the database folder for each table
     > to create the tables and fill them use the  `init_db.sql` file
-4. then run the web app
+4. install the dependencies
+    > you do that with `pip install -r requirements.txt`
+5. then run the web app
     > python src/run.py
-5. now you can connect to the app by going to [http://localhost:9090](http://localhost:9090)
+6. now you can connect to the app by going to [http://localhost:9090](http://localhost:9090)
