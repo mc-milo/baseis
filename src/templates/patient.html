@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Database</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            width: 100%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+        }
+        
+        .table-container {
+            margin-top: 10px;
+        }
+        
+        table {
+            width: 35%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+        
+        .edit,.delete {
+            cursor: pointer;
+        }
+        
+        .edit:hover,.delete:hover {
+            color: #337ab7;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Medical Database</h1>
+        </div>
+        <div class="table-container">
+            <table id="output">
+                <thead>
+                    <tr>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="amka" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="id" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="name" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="birth" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="address" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="phone1" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="phone2" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="email" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="insurance" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="plan" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="doctor" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form" role="search">
+                                <input type="search" id="query" name="insuredby" placeholder="Search..." aria-label="Search through site content">
+                                <button>Search</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ΑΜΚΑ </th>
+                        <th>Αριθμός ταυτότητας</th>
+                        <th>Ονοματεπώνυμο </th>
+                        <th>Ημερομηνία Γέννησης </th>
+                        <th>Διεύθυνση</th>
+                        <th>Τηλέφωνο επικοινωνίας 1 </th>
+                        <th>Τηλέφωνο επικοινωνίας 2 </th>
+                        <th>Email </th>
+                        <th>Μοναδικός αριθμός ταυτοποίησης ασφαλιστικής</th>
+                        <th>Μοναδικός αριθμός ταυτοποίησης πλάνου ασφαλιστικής </th>
+                        <th>Μοναδικός αριθμός ταυτοποίησης προσωπικού ιατρού </th>
+                        <th>Αριθμός ασφαλιζομένου σε τρίτο</th>
+                    </tr>
+                </thead>
+                <tbody id="output-body">
+                    {% for x in data %}
+                    <tr>
+                        {% for y in x %}
+                            <td>{{ y }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="/"><input type="button" value="back to main page" /></a>
+    </div>
+</body>
+</html>
